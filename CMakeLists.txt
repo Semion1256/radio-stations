@@ -14,6 +14,9 @@ set(SOURCES
     src/mainwindow.cpp
     src/config/envLoader.cpp
     src/database/databaseManager.cpp
+    src/models/operator.cpp
+    src/models/station.cpp
+    src/models/license.cpp
 
 )
 
@@ -21,6 +24,9 @@ set(HEADERS
     src/mainwindow.h
     src/config/envLoader.h
     src/database/databaseManager.h
+    src/models/operator.h
+    src/models/station.h
+    src/models/license.h
 
 )
 
