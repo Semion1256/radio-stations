@@ -3,6 +3,7 @@
 #include <QDateTime>
 class Operator{
 public:
+    Operator();
     Operator(int id, const QString& name, const QString& inn,
              const QString& kpp, const QString& ogrn,
              const QString& phone, const QString& email,

@@ -17,6 +17,8 @@ set(SOURCES
     src/models/operator.cpp
     src/models/station.cpp
     src/models/license.cpp
+    src/repositories/operatorRepository.cpp
+
 
 )
 
@@ -27,6 +29,8 @@ set(HEADERS
     src/models/operator.h
     src/models/station.h
     src/models/license.h
+    src/repositories/baseRepository.h
+    src/repositories/operatorRepository.h
 
 )
 
