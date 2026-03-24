@@ -7,18 +7,31 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
-
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets Sql)
+set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/src/resources)
 set(SOURCES
-    main.cpp
-    mainwindow.cpp
+    src/main.cpp
+    src/mainwindow.cpp
+    src/config/envLoader.cpp
+    src/database/databaseManager.cpp
+
 )
 
 set(HEADERS
-    mainwindow.h
+    src/mainwindow.h
+    src/config/envLoader.h
+    src/database/databaseManager.h
+
 )
 
 add_executable(radio-stations ${SOURCES} ${HEADERS}
-    form.ui)
+    src/resources/form.ui
+)
 
-target_link_libraries(radio-stations Qt6::Core Qt6::Widgets)
+target_link_libraries(radio-stations Qt6::Core Qt6::Widgets Qt6::Sql)
+
+target_include_directories(radio-stations PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+
+)
