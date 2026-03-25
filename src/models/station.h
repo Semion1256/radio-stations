@@ -3,6 +3,7 @@
 #include <QDateTime>
 class Station{
 public:
+    Station();
     Station(int id, const QString& name, const QString& city,
             const QString& frequency, int operatorId, bool isActive);
 

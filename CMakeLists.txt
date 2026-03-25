@@ -18,6 +18,7 @@ set(SOURCES
     src/models/station.cpp
     src/models/license.cpp
     src/repositories/operatorRepository.cpp
+    src/repositories/stationRepository.cpp
 
 
 )
@@ -31,6 +32,7 @@ set(HEADERS
     src/models/license.h
     src/repositories/baseRepository.h
     src/repositories/operatorRepository.h
+    src/repositories/stationRepository.h
 
 )
 

@@ -1,4 +1,9 @@
 #include "station.h"
+Station::Station():m_id(-1)
+{
+
+}
+
 Station::Station(int id, const QString& name, const QString& city,
                  const QString& frequency, int operatorId, bool isActive)
     : m_id(id)
