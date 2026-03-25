@@ -1,4 +1,9 @@
 #include "license.h"
+License::License():m_id(-1)
+{
+
+}
+
 License::License(int id, const QString &licenseNumber, const QDate &issueDate, const QDate &expiryDate, int stationId, bool isValid, const QString &scanPath, const QString &notes)
     : m_id(id)
     , m_licenseNumber(licenseNumber)

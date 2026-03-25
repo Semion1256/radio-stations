@@ -3,6 +3,7 @@
 #include <QDateTime>
 class License{
 public:
+    License();
     License(int id, const QString& licenseNumber, const QDate& issueDate,
             const QDate& expiryDate, int stationId, bool isValid,
             const QString& scanPath = "", const QString& notes = "");
