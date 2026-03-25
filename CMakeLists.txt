@@ -20,6 +20,7 @@ set(SOURCES
     src/repositories/operatorRepository.cpp
     src/repositories/stationRepository.cpp
     src/repositories/licenseRepository.cpp
+    src/validators/operatorValidator.cpp
 
 
 )
@@ -35,6 +36,7 @@ set(HEADERS
     src/repositories/operatorRepository.h
     src/repositories/stationRepository.h
     src/repositories/licenseRepository.h
+    src/validators/operatorValidator.h
 
 )
 
