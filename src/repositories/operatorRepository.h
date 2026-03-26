@@ -11,6 +11,8 @@ public:
     Operator getById(int id) override;
     bool update(const Operator& op) override;
     bool remove(int id) override;
+
+    Operator findByInn(const QString& inn);
 private:
     QSqlDatabase m_db;
 };

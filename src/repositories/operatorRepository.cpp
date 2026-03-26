@@ -109,3 +109,27 @@ bool OperatorRepository::remove(int id)
     }
     return true;
 }
+
+Operator OperatorRepository::findByInn(const QString& inn)
+{
+    QSqlQuery query(m_db);
+    query.prepare("SELECT * from operators WHERE inn = :inn");
+    query.bindValue(":inn", inn);
+    if (!query.exec()) {
+        qDebug() << "Failed to get operator by id:" << query.lastError().text();
+        return Operator();
+    }
+    if (query.next()){
+        Operator op;
+        op.setId(query.value("id").toInt());
+        op.setName(query.value("name").toString());
+        op.setInn(query.value("inn").toString());
+        op.setKpp(query.value("kpp").toString());
+        op.setOgrn(query.value("ogrn").toString());
+        op.setPhone(query.value("phone").toString());
+        op.setEmail(query.value("email").toString());
+        op.setContactPerson(query.value("contact_person").toString());
+        return op;
+    }
+    return Operator();
+}
