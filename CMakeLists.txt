@@ -22,8 +22,10 @@ set(SOURCES
     src/repositories/licenseRepository.cpp
     src/validators/operatorValidator.cpp
     src/validators/stationValidator.cpp
+    src/validators/licenseValidator.cpp
     src/services/operatorService.cpp
     src/services/stationService.cpp
+    src/services/licenseService.cpp
 
 
 )
@@ -41,8 +43,10 @@ set(HEADERS
     src/repositories/licenseRepository.h
     src/validators/operatorValidator.h
     src/validators/stationValidator.h
+    src/validators/licenseValidator.h
     src/services/operatorService.h
     src/services/stationService.h
+    src/services/licenseService.cpp
 
 )
 
