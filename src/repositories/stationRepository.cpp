@@ -104,4 +104,52 @@ bool StationRepository::remove(int id)
     return true;
 }
 
+bool StationRepository::isFrequencyUniqueInCity(QString frequency, QString city, int execludeId)
+{
+    QSqlQuery query(m_db);
+    if (execludeId>0){
+        query.prepare("SELECT COUNT(*) FROM stations WHERE frequency =:frequency AND city =:city AND id != :id");
+        query.bindValue(":id", execludeId);
+
+    }else{
+        query.prepare("SELECT COUNT(*) FROM stations WHERE frequency =:frequency AND city =:city");
+    }
+
+    query.bindValue(":frequency", frequency);
+    query.bindValue(":city", city);
+    if (!query.exec()){
+        qDebug() << "Failed to check frequency uniqueness:" << query.lastError().text();
+        return false;
+    }
+    if (query.next()){
+        int count = query.value(0).toInt();
+        return count == 0;
+    }
+    return false;
+}
+
+bool StationRepository::isStationNameUniqueInCity(QString name, QString city, int execludeId)
+{
+    QSqlQuery query(m_db);
+    if (execludeId>0){
+        query.prepare("SELECT COUNT(*) FROM stations WHERE name =:name AND city =:city AND id != :id");
+        query.bindValue(":id", execludeId);
+
+    }else{
+        query.prepare("SELECT COUNT(*) FROM stations WHERE frequency =:frequency AND city =:city");
+    }
+
+    query.bindValue(":frequency", name);
+    query.bindValue(":city", city);
+    if (!query.exec()){
+        qDebug() << "Failed to check name uniqueness:" << query.lastError().text();
+        return false;
+    }
+    if (query.next()){
+        int count = query.value(0).toInt();
+        return count == 0;
+    }
+    return false;
+}
+
 

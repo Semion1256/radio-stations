@@ -10,6 +10,9 @@ public:
     Station getById(int id) override;
     bool update(const Station& station) override;
     bool remove(int id) override;
+
+    bool isFrequencyUniqueInCity(QString frequency, QString city, int execludeId =0);
+    bool isStationNameUniqueInCity(QString name, QString city, int execludeId =0);
 private:
     QSqlDatabase m_db;
 

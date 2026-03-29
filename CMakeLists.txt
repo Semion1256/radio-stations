@@ -23,6 +23,7 @@ set(SOURCES
     src/validators/operatorValidator.cpp
     src/validators/stationValidator.cpp
     src/services/operatorService.cpp
+    src/services/stationService.cpp
 
 
 )
@@ -41,6 +42,7 @@ set(HEADERS
     src/validators/operatorValidator.h
     src/validators/stationValidator.h
     src/services/operatorService.h
+    src/services/stationService.h
 
 )
 
