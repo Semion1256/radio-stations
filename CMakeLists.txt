@@ -46,7 +46,7 @@ set(HEADERS
     src/validators/licenseValidator.h
     src/services/operatorService.h
     src/services/stationService.h
-    src/services/licenseService.cpp
+    src/services/licenseService.h
 
 )
 
