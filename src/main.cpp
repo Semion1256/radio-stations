@@ -2,6 +2,7 @@
 #include "mainwindow.h"
 #include "config/envLoader.h"
 #include "database/databaseManager.h"
+#include "ui/operatorsTab.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,8 +13,8 @@ int main(int argc, char *argv[])
         DataBaseManager databaseManager(dbConfig.value());
     }
 
-    MainWindow window;
-    window.show();
+    OperatorsTab* window = new OperatorsTab();
+    window->show();
     return app.exec();
 }
 

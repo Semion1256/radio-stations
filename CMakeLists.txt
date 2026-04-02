@@ -26,6 +26,8 @@ set(SOURCES
     src/services/operatorService.cpp
     src/services/stationService.cpp
     src/services/licenseService.cpp
+    src/ui/baseTab.cpp
+    src/ui/operatorsTab.cpp
 
 
 )
@@ -47,6 +49,8 @@ set(HEADERS
     src/services/operatorService.h
     src/services/stationService.h
     src/services/licenseService.h
+    src/ui/baseTab.h
+    src/ui/operatorsTab.h
 
 )
 
